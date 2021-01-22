@@ -1,7 +1,7 @@
 from flask import Flask,render_template
 
 app=Flask(__name__)
-#路由
+#路由  和页面显示
 @app.route("/")
 def index():
     name="小兰"
