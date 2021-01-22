@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+    {% block title %}
+详情页
+{% endblock %}
+{% block main %}
+<!--<div class="list-group-item list-group-item-danger">-->
+<!--  <div class="panel-body">-->
+<!--    {{ actile.title }}-->
+<!--  </div>-->
+<!--  <div class="panel-footer">{{ actile.concent }}</div>-->
+<!--</div>-->
+<div class="list-group-item list-group-item-danger">
+  <div class="panel-heading">{{ actile.title }}</div>
+  <div class="panel-body">
+    {{ actile.concent }}
+  </div>
+</div>
+{% endblock %}

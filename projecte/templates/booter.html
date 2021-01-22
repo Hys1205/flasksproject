@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+    {% block title %}
+首页
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <div class="list-group">
+        {% for a in actile %}
+            {% if a.id==1 %}
+                <a href="/{{a.id}}" class="list-group-item list-group-item-success">
+                  {{ a.title }}
+                </a>
+            {% else %}
+                <a href="/{{a.id}}" class="list-group-item list-group-item-danger">
+                  {{ a.title }}
+                </a>
+        {% endif %}
+        {% endfor %}
+
+<!--  <a href="#" class="list-group-item list-group-item-info">第二章：序言1</a>-->
+<!--  <a href="#" class="list-group-item list-group-item-warning">第三章：序言2</a>-->
+<!--  <a href="#" class="list-group-item list-group-item-danger">第四章：序言3</a>-->
+    </div>
+</div>
+{% endblock %}
