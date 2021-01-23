@@ -1,7 +1,7 @@
 """
 flask的模板文件
 """
-from flask import Flask,render_template
+from flask import Flask,render_template,redirect
 app=Flask(__name__)
 book={
     "name":"斗破大陆",
@@ -24,6 +24,7 @@ book={
         },
     ]
 }
+
 @app.route("/")
 def botter():
     actile=book["actile"]
@@ -35,5 +36,13 @@ def footer(pk):
         if a["id"]==pk:
             actile=a
     return render_template("footer.html",**locals())
+@app.route("/login")
+def logins():
+    actile=book["actile"]
+    return render_template("login.html",**locals())
+@app.route("/logto")
+def logtos():
+    actile=book["actile"]
+    return render_template("logto.html",**locals())
 if __name__ == '__main__':
     app.run(debug=True)

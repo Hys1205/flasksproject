@@ -43,8 +43,13 @@
         <button type="submit" class="btn btn-default">搜索</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">登录</a></li>
-          <li><a href="#">注册</a></li>
+        {% if user %}
+        <li><a href="#">{{ user }}</a></li>
+          <li><a href="#">退出</a></li>
+        {% else %}
+          <li><a href="{{ url_for('logins') }}">登录</a></li>
+          <li><a href="{{ url_for('logtos') }}">注册</a></li>
+        {% endif %}
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
